@@ -25,3 +25,4 @@ echo Getting image information:
 dism /Get-WimInfo /wimfile:%image%\sources\install.wim
 dism /Get-WimInfo /wimfile:%image%\sources\install.esd
 echo.
+pause
