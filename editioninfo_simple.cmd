@@ -2,7 +2,7 @@
 cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "wt", "cmd.exe /k cd ""%~sdp0"" && %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
 setlocal EnableExtensions EnableDelayedExpansion
 
-title Windows Edition Converter
+title Windows Edition Info Simple
 
 set /p image=Please enter the drive letter for the Windows image: 
 echo.
@@ -20,7 +20,6 @@ if not exist "%image%\sources\install.*" (
 	goto :EOF
 )
 cls
-
 echo Getting image information:
 dism /Get-WimInfo /wimfile:%image%\sources\install.wim
 dism /Get-WimInfo /wimfile:%image%\sources\install.esd
